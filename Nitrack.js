@@ -4,7 +4,7 @@
 */
 
 
-    class eventEmitter extends Nitrack{
+    class eventEmitter extends NITRACK{
         /**
          * 
          * @param {string} eventName 
@@ -14,7 +14,7 @@
             
         }
     }
-    class Nitrack {
+    class NITRACK {
         constructor(){
             
         }
