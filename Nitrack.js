@@ -150,6 +150,7 @@ class component{
         if (typeof tagName !== "string" || !this.tags.includes(tagName)) {
             throw new Error("TagName not specified or supported!");
         }else if(typeof id !== "string" && typeof className !== "string"){
+            console.warn(`<${tagName}> was created without any id or className!`);
             this.Listenable = false;
         }
 
