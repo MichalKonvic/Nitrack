@@ -74,7 +74,7 @@ export class nitrackView{
      * @param {Object} styles !!!PUT EVERYTHING INSIDE OBJECT TO STRING!!!
      * @returns Updated css Object
      */
-    newStyle(elementId,styles){
+    elementStyle(elementId,styles){
         this.CSS[elementId] = styles;
         return this.CSS;
     }

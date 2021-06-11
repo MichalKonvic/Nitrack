@@ -29,13 +29,13 @@ demoView.HTML = `
 `;
 
 /* Styles for Title */
-demoView.newStyle("Title",{
+demoView.elementStyle("Title",{
     "font-size":"100px",
     "color":"red"
 });
 
 /* Styles for Description */
-demoView.newStyle("Description",{
+demoView.elementStyle("Description",{
     "font-size":"60px",
     "color":"green"
 });
