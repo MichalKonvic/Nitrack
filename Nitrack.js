@@ -63,28 +63,11 @@ export class nitrack{
             console.error("Error occured while rendering css!");
             console.log(error)
         }
-        try {
-            document.getElementById(renderElementID).innerHTML += viewObject.jsCompile();
-        } catch (error) {
-            console.error("Error occured while rendering javascript!");
-        }
     }
 }
 export class nitrackView{
     HTML = ``;
     CSS = {};
-    jsCompileProperties = {
-        "async": "__!Include",
-        "crossorigin=": "__!Include",
-        "integrity=": "__!Include",
-        "nomodule": "__!Include",
-        "referrerpolicy=": "__!Include",
-        "src=": "__!Include",
-        "type=": "__!Include"
-    };
-    js = () => {
-
-    };
     /**
      * Adds or changes element style.
      * @param {String} elementId 
@@ -106,25 +89,5 @@ export class nitrackView{
         }
         delete this.CSS[elementId];
         return this.CSS;
-    }
-    /**
-     * JavaScript code that will be rendered with view
-     * @param {Function} jsCode 
-     */
-    setJS(jsCode){
-        this.js = jsCode();
-    }
-    jsCompile(){
-        let properties = [];
-        Object.entries(this.jsCompileProperties).forEach(([key, value]) => {
-            if(value === "__!Include"){
-            }else if(key.charAt(key.length - 1) !== "="){
-                properties.push(key);
-            }else{
-                properties.push(`${key}"${value}"`);
-            }
-        });
-        properties = properties.join(" ");
-        return `<script ${properties}>${this.js}</script>`;
     }
 }
