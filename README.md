@@ -16,13 +16,13 @@ Created by absolute beginner ([me🖐](https://github.com/MichalKonvic)).
 
 ---
 
-### Nitrack-View ###
+### nitrackView ###
 
-Example of Nitrack-View:
+Example of View:
 ```javascript
-import nitrackView from "./Nitrack-View";
-
+import {nitrackView} from "./nitrack.js";
 let demoView = new nitrackView();
+/* Into this could be passed any valid HTML including script tag */
 demoView.HTML = `
     <h1 id="Title">Hello world</h1>
     <p id="Description">This text is rendered using NitrackView </p>
@@ -39,26 +39,6 @@ demoView.newStyle("Description",{
     "font-size":"60px",
     "color":"green"
 });
-
-/* Scripts are rendered as <script> tag inside browser */
-demoView.setJS(()=>{
-    console.log("Script loaded");
-})
-
-/* This properties are optional */
-demoView.jsCompileProperties = {
-    "async": true,
-    "type=": "application/javascript"
-};
-/* Default jsCompileProperties:
-    "async": "__!Include",
-    "crossorigin=": "__!Include",
-    "integrity=": "__!Include",
-    "nomodule": "__!Include",
-    "referrerpolicy=": "__!Include",
-    "src=": "__!Include",
-    "type=": "__!Include"
-*/
-
-export default demoView;
+/* exports view */
+export default demoView
 ```
